@@ -32,7 +32,7 @@ int main() {
     std::string tempV;
     std::string userInput;
     char commaChecker;
-    std::cout << std::cout << "Enter a comma-separated list of elements: ";
+    std::cout << "Enter a comma-separated list of elements: ";
     std::getline(std::cin, userInput);
     // For every character in the user inputted list,
     // if it is not a comma, the program adds it to a string.
@@ -49,5 +49,13 @@ int main() {
     cleanList = removeSimilarities(badList);
     // Printing the output.
     printf("The list after removing all duplicates is: ");
-    std::cout << cleanList;
+    int cleanListSize = cleanList.size();
+    if (cleanListSize != 0) {
+        std::cout << "[ " << cleanList[0];
+        for (int displayCounter = 1;
+        displayCounter < cleanListSize; displayCounter++) {
+            std::cout << ", " << cleanList[displayCounter];
+        }
+        std::cout << " ]";
+    }
 }
